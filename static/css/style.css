@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
+.media img {
+    width: 300px;
+    margin: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.media img:hover {
+    transform: scale(1.1);
+}
+
+.audio-video {
+    margin-top: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animation to images */
+.media img {
+    width: 300px;
+    margin: 10px;
+    transition: transform 0.3s ease-in-out;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Scale effect on hover */
+.media img:hover {
+    transform: scale(1.1);
+}
+
+/* Slide-in effect for text */
+.text-content p {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+

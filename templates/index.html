@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Multimedia Webpage</title>
+    <link rel="stylesheets" href="{% static 'css/styles.css' %}">
+    <!-- AOS Library -->
+<link rel="stylesheets" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+</head>
+
+<body>
+    <header>
+    
+
+
+        <h1>Welcome to Our Interactive Multimedia Webpage</h1>
+    </header>
+    
+    <main>
+        <section class="text-content">
+            <p>This page includes various multimedia elements like images, audio, video, and animations.</p>
+        </section>
+
+        <section class="media">
+            <h2>Image Gallery</h2>
+            <img src="{% static 'media/image1.jpg' %}" alt="Beautiful Landscape">
+            <img src="{% static 'media/image2.jpg' %}" alt="City View">
+        </section>
+        
+        
+        <section class="audio-video">
+            <h2>Audio & Video</h2>
+            <audio controls>
+                <source src="{% static 'media/audio.mp3' %}" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            
+            <video controls>
+                <source src="{% static 'media/video.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+    </main>
+    {% for video in videos %}
+    <h2>{{ video.title }}</h2>
+    <video width="600" controls>
+        <source src="{{ video.video_file.url }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+{% endfor %}
+
+    
+    
+    
+    <footer>
+        <p>&copy; 2025 Interactive Media. All rights reserved.</p>
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+    <!-- AOS Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+</body>
+</html>
